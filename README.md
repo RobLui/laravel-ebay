@@ -127,8 +127,10 @@ printf("The official eBay time is: %s\n", $response->Timestamp->format('H:i (\G\
 ```php
 use \DTS\eBaySDK\Shopping\Services;
 use \DTS\eBaySDK\Shopping\Types;
+use Hkonnet\LaravelEbay\Ebay;
 
-$config = Ebay::getConfig();
+$ebay = new Ebay();
+$config = $ebay->getConfig();
 
 // Create the service object.
 $service = new Services\ShoppingService($config);
@@ -187,9 +189,12 @@ use \DTS\eBaySDK\Finding\Types;
 ```php
 use DTS\eBaySDK\Finding\Services\FindingService;
 use \DTS\eBaySDK\Finding\Types;
+use Hkonnet\LaravelEbay\Ebay;
   
 // Create the service object.
-    $config = Ebay::getConfig();
+    
+    $ebay = new Ebay();
+    $config = $ebay->getConfig();
     $service = new FindingService($config);
 
 // Assign the keywords.
